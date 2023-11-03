@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "asd-fall-2023"
+version = "0.1.0"
+description = ""
+authors = ["Jesse He <hjesse92@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.104.0"
+uvicorn = "^0.23.2"
+torch = "^2.1.0"
+torchvision = "^0.16.0"
+python-multipart = "^0.0.6"
+torchserve = "^0.9.0"
+torch-model-archiver = "^0.9.0"
+scikit-learn = "^1.3.2"
+
+
+[tool.poetry.group.dev.dependencies]
+isort = "^5.12.0"
+black = "^23.10.1"
+boto3 = "^1.28.75"
+tqdm = "^4.66.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

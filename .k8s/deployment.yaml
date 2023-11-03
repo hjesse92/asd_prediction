@@ -1,0 +1,45 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: asd-ns
+  name: asd-deployment
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: asd-prediction-app
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: asd-prediction-app
+    spec:
+      containers:
+      - name: asd-deployment-container
+        image: 700851836540.dkr.ecr.us-west-2.amazonaws.com/asd_fall_2023@sha256:e4d16bc521033e3cd44a87da79a9e7e741e57a298c8725daf2896c13cfa548ff
+        imagePullPolicy: IfNotPresent
+        ports:
+          - containerPort: 8000
+        readinessProbe:
+          httpGet:
+            scheme: HTTP
+            path: /health
+            port: 8000
+          initialDelaySeconds: 15
+          periodSeconds: 3
+        livenessProbe:
+          httpGet:
+            scheme: HTTP
+            path: /health
+            port: 8000
+          initialDelaySeconds: 30
+          periodSeconds: 20
+        resources:
+          requests:
+            memory: "16Gi"
+            cpu: "1000m"
+            ephemeral-storage: "30Gi"
+          limits:
+            memory: "32Gi"
+            cpu: "5000m"
+            ephemeral-storage: "50Gi"

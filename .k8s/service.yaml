@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: asd-ns
+  name: asd-service
+spec:
+  type: ClusterIP
+  # type: NodePort
+  ports:
+    - port: 8000
+      targetPort: 8000
+      protocol: TCP
+  selector:
+    app.kubernetes.io/name: asd-prediction-app

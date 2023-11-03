@@ -26,9 +26,9 @@ Project Organization
     │       ├── rev1          <- Data Split - train:test::0.9:0.1
     │   ├── metadata        <- Intermediate data that has been transformed.
     │   
-    ├── models             <- Trained and serialized models, model predictions, or model summaries
+    ├── models_notebooks      <- Trained and serialized models, model predictions, or model summaries
     │
     ├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
     │                         the creator's initials, and a short `-` delimited description, e.g.
     │                         `1.0-jqp-initial-data-exploration`.
-  
+    ├── src                <- Source code for use in this project.

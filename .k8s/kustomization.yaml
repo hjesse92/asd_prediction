@@ -1,0 +1,9 @@
+---
+namespace: asd-ns
+resources:
+  - namespace.yaml
+  # - persistent-volume.yaml
+  - ingress.yaml
+  - service.yaml
+  - deployment.yaml
+  - deployment-copy.yaml
